@@ -54,13 +54,20 @@ class _HomePageState extends State<HomePage> {
           Map<String, dynamic>? data = doc.data();
           if (data != null) {
             setState(() {
-              _userName = data['name'];
+              _userName = data['name'] ?? 'User';
               _userImageUrl = data['imageUrl'];
             });
           }
         }
       } catch (e) {
         print('Error loading user profile: $e');
+        // Set default values if there's an error
+        if (mounted) {
+          setState(() {
+            _userName = 'User';
+            _userImageUrl = null;
+          });
+        }
       }
     }
   }
@@ -69,26 +76,32 @@ class _HomePageState extends State<HomePage> {
     User? user = _auth.currentUser;
     if (user != null) {
       try {
-      DocumentSnapshot userDoc = await _firestore.collection('users').doc(user.uid).get();
+        DocumentSnapshot userDoc = await _firestore.collection('users').doc(user.uid).get();
         if (userDoc.exists && mounted) {
-          Map<String, dynamic> data = userDoc.data() as Map<String, dynamic>;
-          dynamic concerns = data['healthConcerns'];
-          
-          if (concerns is List) {
+          Map<String, dynamic>? data = userDoc.data() as Map<String, dynamic>?;
+          if (data != null) {
+            dynamic concerns = data['healthConcerns'];
+            
+            if (concerns is List) {
+              setState(() {
+                _healthConcerns = List<Map<String, String>>.from(
+                  concerns.map((concern) => Map<String, String>.from(concern))
+                );
+              });
+            } else if (concerns is String) {
+              // If healthConcerns is a string, convert it to a list format
+              setState(() {
+                _healthConcerns = [{'concern': concerns}];
+              });
+            } else {
+              setState(() {
+                _healthConcerns = [];
+              });
+            }
+          } else {
             setState(() {
-              _healthConcerns = List<Map<String, String>>.from(
-                concerns.map((concern) => Map<String, String>.from(concern))
-              );
+              _healthConcerns = [];
             });
-          } else if (concerns is String) {
-            // If healthConcerns is a string, convert it to a list format
-        setState(() {
-              _healthConcerns = [{'concern': concerns}];
-        });
-      } else {
-        setState(() {
-          _healthConcerns = [];
-        });
           }
         } else if (mounted) {
           setState(() {

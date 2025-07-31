@@ -4,10 +4,29 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'reply.dart';
 
 class NotificationPage extends StatelessWidget {
-  final String currentUserId = FirebaseAuth.instance.currentUser!.uid;
+  String get currentUserId {
+    final user = FirebaseAuth.instance.currentUser;
+    return user?.uid ?? '';
+  }
 
   @override
   Widget build(BuildContext context) {
+    // Check if user is logged in
+    if (currentUserId.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('Notifications'),
+          backgroundColor: const Color(0xFF4CAF82),
+        ),
+        body: const Center(
+          child: Text(
+            'Please log in to view notifications',
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notifications'),

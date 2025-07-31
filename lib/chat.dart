@@ -141,9 +141,15 @@ class _ChatPageState extends State<ChatPage> {
 
     DocumentReference? docRef;
     try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        _showErrorMessage("Please log in to use chat");
+        return;
+      }
+      
       docRef = await FirebaseFirestore.instance
           .collection('chat_history')
-          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .doc(user.uid)
           .collection('messages')
           .add({
         'user_query': userInput,

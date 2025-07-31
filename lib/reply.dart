@@ -266,13 +266,17 @@ class _ReplyPageState extends State<ReplyPage> {
                               radius: 22,
                               backgroundColor: Colors.grey[200],
                               backgroundImage: profileImage != null &&
-                                      profileImage.isNotEmpty
+                                      profileImage.isNotEmpty &&
+                                      profileImage.startsWith('http')
                                   ? NetworkImage(profileImage)
                                   : null,
+                              onBackgroundImageError: (exception, stackTrace) {
+                                print('Error loading profile image: $exception');
+                              },
                               child:
-                                  (profileImage == null || profileImage.isEmpty)
+                                  (profileImage == null || profileImage.isEmpty || !profileImage.startsWith('http'))
                                       ? Text(
-                                          user[0].toUpperCase(),
+                                          user.isNotEmpty ? user[0].toUpperCase() : 'U',
                                           style: TextStyle(
                                             color: primaryColor,
                                             fontWeight: FontWeight.bold,
@@ -317,7 +321,7 @@ class _ReplyPageState extends State<ReplyPage> {
                                         ),
                                       ),
                                     ),
-                                  if (imageUrl != null && imageUrl.isNotEmpty)
+                                  if (imageUrl != null && imageUrl.isNotEmpty && imageUrl.startsWith('http'))
                                     Padding(
                                       padding: const EdgeInsets.only(top: 8.0),
                                       child: ClipRRect(
@@ -327,6 +331,16 @@ class _ReplyPageState extends State<ReplyPage> {
                                           height: 120,
                                           width: double.infinity,
                                           fit: BoxFit.cover,
+                                          errorBuilder: (context, error, stackTrace) {
+                                            print('Error loading reply image: $error');
+                                            return Container(
+                                              height: 120,
+                                              color: Colors.grey[200],
+                                              child: Center(
+                                                child: Icon(Icons.broken_image, color: Colors.grey),
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),

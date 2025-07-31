@@ -229,10 +229,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         backgroundColor: Colors.grey[200],
                         backgroundImage: _selectedImageFile != null
                             ? FileImage(_selectedImageFile!)
-                            : _imageUrl != null
+                            : _imageUrl != null && _imageUrl!.startsWith('http')
                                 ? NetworkImage(_imageUrl!)
                                 : null,
-                        child: _selectedImageFile == null && _imageUrl == null
+                        onBackgroundImageError: (exception, stackTrace) {
+                          print('Error loading profile image: $exception');
+                        },
+                        child: _selectedImageFile == null && (_imageUrl == null || !_imageUrl!.startsWith('http'))
                             ? Icon(
                                 Icons.person_outline,
                                 size: 60,

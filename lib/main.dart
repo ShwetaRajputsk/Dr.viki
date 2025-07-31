@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'chat.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,45 +18,111 @@ import 'package:easy_localization/easy_localization.dart';
 import 'shop.dart';
 import 'firebase_test.dart';
 import 'firebase_fix.dart';
+import 'dart:async';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  
-  try {
-    print('Initializing Firebase with retry mechanism...');
-    await FirebaseFix.initializeFirebaseWithRetry();
-    
-    // Test authentication functionality
-    try {
-      await FirebaseFix.testAuthentication();
-    } catch (e) {
-      print('Authentication test failed: $e');
-    }
-    
-  } catch (e) {
-    print('Firebase initialization error: $e');
-    print('Error details: ${e.toString()}');
-    if (e is FirebaseException) {
-      print('Firebase error code: ${e.code}');
-      print('Firebase error message: ${e.message}');
-    }
-  }
-  
-  await EasyLocalization.ensureInitialized();
+  // Set up error handling
+  FlutterError.onError = (FlutterErrorDetails details) {
+    print('❌ FLUTTER ERROR: ${details.exception}');
+    print('Stack trace: ${details.stack}');
+    print('Library: ${details.library}');
+    print('Context: ${details.context}');
+  };
 
-  runApp(
-    EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('hi')],
-      path: 'assets/translations',
-      fallbackLocale: Locale('en'),
-      child: MyApp(),
-    ),
-  );
+  // Set up unhandled exception handling
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    
+    print('=== APP STARTUP ===');
+    print('Flutter binding initialized');
+    print('Platform: ${defaultTargetPlatform}');
+    
+    bool firebaseInitialized = false;
+    
+    try {
+      print('Attempting Firebase initialization...');
+      
+      // Try direct Firebase initialization first
+      try {
+        print('Trying direct Firebase initialization...');
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
+        firebaseInitialized = true;
+        print('✅ Firebase initialized directly');
+      } catch (e) {
+        print('Direct Firebase init failed: $e');
+        print('Error type: ${e.runtimeType}');
+        
+        // Fallback to FirebaseFix
+        try {
+          print('Trying FirebaseFix initialization...');
+          await FirebaseFix.initializeFirebaseWithRetry();
+          firebaseInitialized = true;
+          print('✅ Firebase initialized with retry mechanism');
+        } catch (e2) {
+          print('❌ Firebase initialization failed: $e2');
+          print('Error type: ${e2.runtimeType}');
+          firebaseInitialized = false;
+        }
+      }
+      
+      // Test authentication functionality
+      if (firebaseInitialized) {
+        try {
+          print('Testing Firebase authentication...');
+          await FirebaseFix.testAuthentication();
+          print('✅ Authentication test passed');
+        } catch (e) {
+          print('⚠️ Authentication test failed: $e');
+        }
+      }
+      
+    } catch (e) {
+      print('❌ Firebase initialization error: $e');
+      print('Error details: ${e.toString()}');
+      if (e is FirebaseException) {
+        print('Firebase error code: ${e.code}');
+        print('Firebase error message: ${e.message}');
+      }
+      // Continue without Firebase if initialization fails
+      firebaseInitialized = false;
+    }
+    
+    try {
+      print('Initializing EasyLocalization...');
+      await EasyLocalization.ensureInitialized();
+      print('✅ EasyLocalization initialized successfully');
+    } catch (e) {
+      print('❌ EasyLocalization initialization error: $e');
+    }
+
+    print('Starting app with Firebase initialized: $firebaseInitialized');
+    
+    runApp(
+      EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('hi')],
+        path: 'assets/translations',
+        fallbackLocale: Locale('en'),
+        child: MyApp(firebaseInitialized: firebaseInitialized),
+      ),
+    );
+  }, (error, stack) {
+    print('❌ UNHANDLED ERROR: $error');
+    print('Error type: ${error.runtimeType}');
+    print('Stack trace: $stack');
+  });
 }
 
 class MyApp extends StatelessWidget {
+  final bool firebaseInitialized;
+  
+  const MyApp({Key? key, required this.firebaseInitialized}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    print('Building MyApp with Firebase initialized: $firebaseInitialized');
+    
     return MaterialApp(
       title: 'Dr Viki',
       debugShowCheckedModeBanner: false,
@@ -81,7 +148,7 @@ textTheme: TextTheme(
   titleSmall: TextStyle(fontFamily: 'Poppins'),
 ),
       ),
-      home: SplashScreen(),
+      home: SplashScreen(firebaseInitialized: firebaseInitialized),
       routes: {
         '/onboarding': (context) => PlantApp(),
         '/home': (context) => HomePage(),
@@ -106,7 +173,7 @@ class AuthFlow extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return SplashScreen();
+          return SplashScreen(firebaseInitialized: true);
         }
         if (snapshot.hasData) {
           return HomePage();

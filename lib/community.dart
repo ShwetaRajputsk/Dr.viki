@@ -440,10 +440,13 @@ class _CommunityPageState extends State<CommunityPage> {
                 child: CircleAvatar(
                   radius: 24,
                   backgroundColor: Colors.white,
-                  backgroundImage: userProfileImage.isNotEmpty
+                  backgroundImage: userProfileImage.isNotEmpty && userProfileImage.startsWith('http')
                       ? NetworkImage(userProfileImage)
                       : null,
-                  child: userProfileImage.isEmpty
+                  onBackgroundImageError: (exception, stackTrace) {
+                    print('Error loading profile image: $exception');
+                  },
+                  child: userProfileImage.isEmpty || !userProfileImage.startsWith('http')
                       ? Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -458,7 +461,7 @@ class _CommunityPageState extends State<CommunityPage> {
                           ),
                           child: Center(
                             child: Text(
-                              userName[0].toUpperCase(),
+                              userName.isNotEmpty ? userName[0].toUpperCase() : 'U',
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -596,13 +599,14 @@ class _CommunityPageState extends State<CommunityPage> {
             ),
           ),
           const SizedBox(height: 12),
-          if (imageUrl != null && imageUrl.isNotEmpty)
+          if (imageUrl != null && imageUrl.isNotEmpty && imageUrl.startsWith('http'))
             Image.network(
               imageUrl,
               fit: BoxFit.cover,
               height: 200,
               width: double.infinity,
               errorBuilder: (context, error, stackTrace) {
+                print('Error loading post image: $error');
                 return Container(
                   height: 200,
                   color: const Color(0xFFAFAFAF).withOpacity(0.1),
