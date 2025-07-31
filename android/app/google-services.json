@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "472330705050",
+    "project_id": "dr-viki-app",
+    "storage_bucket": "dr-viki-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472330705050:android:61314c7e9400e52155e723",
+        "android_client_info": {
+          "package_name": "com.drviki.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRMmkHO9vGpd8palD_gOaDSWLzgJnb0pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

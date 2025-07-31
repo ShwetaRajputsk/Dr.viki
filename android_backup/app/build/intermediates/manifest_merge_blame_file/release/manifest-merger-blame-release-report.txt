@@ -1,0 +1,419 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.crop_disease_detection"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="35" />
+9-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:2:5-65
+11-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:2:22-62
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:3:5-80
+12-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:3:22-77
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:4:5-81
+13-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:4:22-78
+14
+15    <queries>
+15-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:40:5-45:15
+16        <intent>
+16-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:41:9-44:18
+17            <action android:name="android.intent.action.PROCESS_TEXT" />
+17-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:42:13-73
+17-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:42:21-70
+18
+19            <data android:mimeType="text/plain" />
+19-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:43:13-51
+19-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:43:19-48
+20        </intent>
+21    </queries>
+22
+23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+23-->[:camera_android] /Users/shweta/.pub-cache/hosted/pub.dev/camera_android-0.10.9+11/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-71
+23-->[:camera_android] /Users/shweta/.pub-cache/hosted/pub.dev/camera_android-0.10.9+11/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-68
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:25:5-67
+24-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:25:22-64
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:5-79
+25-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:26:22-76
+26    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+26-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/shweta/.gradle/caches/8.9/transforms/837712a892bc438e831feb84d32fec0c/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:5-98
+26-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/shweta/.gradle/caches/8.9/transforms/837712a892bc438e831feb84d32fec0c/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:22-95
+27
+28    <permission
+28-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+29        android:name="com.example.crop_disease_detection.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.example.crop_disease_detection.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+32-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+33
+34    <application
+34-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:6:5-38:19
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.13.1] /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+36        android:icon="@mipmap/ic_launcher"
+36-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:8:9-43
+37        android:label="crop_disease_detection" >
+37-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:7:9-47
+38        <activity
+38-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:10:9-31:20
+39            android:name="com.example.crop_disease_detection.MainActivity"
+39-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:11:13-41
+40            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+40-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:15:13-163
+41            android:exported="true"
+41-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:12:13-36
+42            android:hardwareAccelerated="true"
+42-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:16:13-47
+43            android:launchMode="singleTop"
+43-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:13:13-43
+44            android:screenOrientation="portrait"
+44-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:18:13-49
+45            android:theme="@style/LaunchTheme"
+45-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:14:13-47
+46            android:windowSoftInputMode="adjustResize" >
+46-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:17:13-55
+47
+48            <!--
+49                 Specifies an Android theme to apply to this Activity as soon as
+50                 the Android process has started. This theme is visible to the user
+51                 while the Flutter UI initializes.
+52            -->
+53            <meta-data
+53-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:23:13-25:57
+54                android:name="io.flutter.embedding.android.NormalTheme"
+54-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:24:17-72
+55                android:resource="@style/NormalTheme" />
+55-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:25:17-54
+56
+57            <intent-filter>
+57-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:27:13-30:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:28:17-69
+58-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:28:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:29:17-77
+60-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:29:27-74
+61            </intent-filter>
+62        </activity>
+63
+64        <!--
+65             Don't delete the meta-data below.
+66             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+67        -->
+68        <meta-data
+68-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:35:9-37:33
+69            android:name="flutterEmbedding"
+69-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:36:13-44
+70            android:value="2" />
+70-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:37:13-30
+71
+72        <service
+72-->[:cloud_firestore] /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
+73            android:name="com.google.firebase.components.ComponentDiscoveryService"
+73-->[:cloud_firestore] /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
+74            android:directBootAware="true"
+74-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:32:13-43
+75            android:exported="false" >
+75-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:68:13-37
+76            <meta-data
+76-->[:cloud_firestore] /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+77                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+77-->[:cloud_firestore] /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[:cloud_firestore] /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+79            <meta-data
+79-->[:firebase_auth] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+80-->[:firebase_auth] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[:firebase_auth] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+82            <meta-data
+82-->[:firebase_storage] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_storage-11.7.7/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+83-->[:firebase_storage] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_storage-11.7.7/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-126
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:firebase_storage] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_storage-11.7.7/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+85            <meta-data
+85-->[:firebase_core] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+86-->[:firebase_core] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[:firebase_core] /Users/shweta/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:69:13-71:85
+89                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+89-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:70:17-109
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:71:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:17:13-19:85
+92                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+92-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:18:17-122
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:19:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:20:13-22:85
+95                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+95-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:21:17-111
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-firestore:24.11.0] /Users/shweta/.gradle/caches/8.9/transforms/c39b36adcfd980b56b976106da658d63/transformed/jetified-firebase-firestore-24.11.0/AndroidManifest.xml:22:17-82
+97            <meta-data
+97-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:30:13-32:85
+98                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+98-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:31:17-118
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:32:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:33:13-35:85
+101                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+101-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:34:17-107
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-storage:20.3.0] /Users/shweta/.gradle/caches/8.9/transforms/95a1aa4825f3308fe5db1fbd38241403/transformed/jetified-firebase-storage-20.3.0/AndroidManifest.xml:35:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:25:13-27:85
+104                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+104-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:26:17-120
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:27:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:28:13-30:85
+107                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+107-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:29:17-117
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-appcheck:17.1.2] /Users/shweta/.gradle/caches/8.9/transforms/ebb3731f3a7bf8e83c2db2f6cc74a4ea/transformed/jetified-firebase-appcheck-17.1.2/AndroidManifest.xml:30:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-common-ktx:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/10aa70c48c5efce2be7bb3efb6064538/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:12:13-14:85
+110                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+110-->[com.google.firebase:firebase-common-ktx:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/10aa70c48c5efce2be7bb3efb6064538/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:13:17-116
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-common-ktx:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/10aa70c48c5efce2be7bb3efb6064538/transformed/jetified-firebase-common-ktx-20.4.3/AndroidManifest.xml:14:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:35:13-37:85
+113                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+113-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:36:17-109
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:37:17-82
+115        </service>
+116
+117        <provider
+117-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:9-19:20
+118            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+118-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-82
+119            android:authorities="com.example.crop_disease_detection.flutter.image_provider"
+119-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-74
+120            android:exported="false"
+120-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-37
+121            android:grantUriPermissions="true" >
+121-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-47
+122            <meta-data
+122-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:13-18:75
+123                android:name="android.support.FILE_PROVIDER_PATHS"
+123-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-67
+124                android:resource="@xml/flutter_image_picker_file_paths" />
+124-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:17-72
+125        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+126        <service
+126-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:9-33:19
+127            android:name="com.google.android.gms.metadata.ModuleDependencies"
+127-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-78
+128            android:enabled="false"
+128-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-36
+129            android:exported="false" >
+129-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-37
+130            <intent-filter>
+130-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:13-28:29
+131                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+131-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:27:17-94
+131-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:27:25-91
+132            </intent-filter>
+133
+134            <meta-data
+134-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-32:36
+135                android:name="photopicker_activity:0:required"
+135-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:31:17-63
+136                android:value="" />
+136-->[:image_picker_android] /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:32:17-33
+137        </service>
+138
+139        <activity
+139-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:29:9-46:20
+140            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+140-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:30:13-80
+141            android:excludeFromRecents="true"
+141-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:31:13-46
+142            android:exported="true"
+142-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:32:13-36
+143            android:launchMode="singleTask"
+143-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:33:13-44
+144            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+144-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:34:13-72
+145            <intent-filter>
+145-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:35:13-45:29
+146                <action android:name="android.intent.action.VIEW" />
+146-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+146-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+147
+148                <category android:name="android.intent.category.DEFAULT" />
+148-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+148-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+149                <category android:name="android.intent.category.BROWSABLE" />
+149-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+149-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+150
+151                <data
+151-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:43:13-51
+152                    android:host="firebase.auth"
+153                    android:path="/"
+154                    android:scheme="genericidp" />
+155            </intent-filter>
+156        </activity>
+157        <activity
+157-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:47:9-64:20
+158            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+158-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:48:13-79
+159            android:excludeFromRecents="true"
+159-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:49:13-46
+160            android:exported="true"
+160-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:50:13-36
+161            android:launchMode="singleTask"
+161-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:51:13-44
+162            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+162-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:52:13-72
+163            <intent-filter>
+163-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:53:13-63:29
+164                <action android:name="android.intent.action.VIEW" />
+164-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+164-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+165
+166                <category android:name="android.intent.category.DEFAULT" />
+166-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+166-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+167                <category android:name="android.intent.category.BROWSABLE" />
+167-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+167-->[com.google.firebase:firebase-auth:22.3.1] /Users/shweta/.gradle/caches/8.9/transforms/b2e20de083aaac2af2bbca52f799e2b2/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+168
+169                <data
+169-->/Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/AndroidManifest.xml:43:13-51
+170                    android:host="firebase.auth"
+171                    android:path="/"
+172                    android:scheme="recaptcha" />
+173            </intent-filter>
+174        </activity>
+175
+176        <provider
+176-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:23:9-28:39
+177            android:name="com.google.firebase.provider.FirebaseInitProvider"
+177-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:24:13-77
+178            android:authorities="com.example.crop_disease_detection.firebaseinitprovider"
+178-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:25:13-72
+179            android:directBootAware="true"
+179-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:26:13-43
+180            android:exported="false"
+180-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:27:13-37
+181            android:initOrder="100" />
+181-->[com.google.firebase:firebase-common:20.4.3] /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/AndroidManifest.xml:28:13-36
+182
+183        <uses-library
+183-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+184            android:name="androidx.window.extensions"
+184-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+185            android:required="false" />
+185-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+186        <uses-library
+186-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+187            android:name="androidx.window.sidecar"
+187-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+188            android:required="false" />
+188-->[androidx.window:window:1.2.0] /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+189
+190        <activity
+190-->[com.google.android.gms:play-services-base:18.1.0] /Users/shweta/.gradle/caches/8.9/transforms/1c5a62b5e8c9ce58b434646c114b1200/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+191            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+191-->[com.google.android.gms:play-services-base:18.1.0] /Users/shweta/.gradle/caches/8.9/transforms/1c5a62b5e8c9ce58b434646c114b1200/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+192            android:exported="false"
+192-->[com.google.android.gms:play-services-base:18.1.0] /Users/shweta/.gradle/caches/8.9/transforms/1c5a62b5e8c9ce58b434646c114b1200/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+193-->[com.google.android.gms:play-services-base:18.1.0] /Users/shweta/.gradle/caches/8.9/transforms/1c5a62b5e8c9ce58b434646c114b1200/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+194
+195        <meta-data
+195-->[com.google.android.gms:play-services-basement:18.3.0] /Users/shweta/.gradle/caches/8.9/transforms/8862ba3f655aa66fbb640f65a80aed6d/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+196            android:name="com.google.android.gms.version"
+196-->[com.google.android.gms:play-services-basement:18.3.0] /Users/shweta/.gradle/caches/8.9/transforms/8862ba3f655aa66fbb640f65a80aed6d/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+197            android:value="@integer/google_play_services_version" />
+197-->[com.google.android.gms:play-services-basement:18.3.0] /Users/shweta/.gradle/caches/8.9/transforms/8862ba3f655aa66fbb640f65a80aed6d/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+198
+199        <provider
+199-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+200            android:name="androidx.startup.InitializationProvider"
+200-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+201            android:authorities="com.example.crop_disease_detection.androidx-startup"
+201-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+202            android:exported="false" >
+202-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+203            <meta-data
+203-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+204                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+204-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+205                android:value="androidx.startup" />
+205-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+206            <meta-data
+206-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+207                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+207-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+208                android:value="androidx.startup" />
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+209        </provider>
+210
+211        <receiver
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+212            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+212-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+213            android:directBootAware="false"
+213-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+214            android:enabled="true"
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+215            android:exported="true"
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+216            android:permission="android.permission.DUMP" >
+216-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+217            <intent-filter>
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+218                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+218-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+218-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+219            </intent-filter>
+220            <intent-filter>
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+221                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+221-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+221-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+222            </intent-filter>
+223            <intent-filter>
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+224                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+224-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+224-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+225            </intent-filter>
+226            <intent-filter>
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+227                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+227-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+227-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+228            </intent-filter>
+229        </receiver>
+230    </application>
+231
+232</manifest>

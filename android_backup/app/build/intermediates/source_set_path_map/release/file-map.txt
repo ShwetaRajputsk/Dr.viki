@@ -1,0 +1,40 @@
+com.example.crop_disease_detection.app-lifecycle-livedata-core-2.7.0-0 /Users/shweta/.gradle/caches/8.9/transforms/0406159f379e50a83d540de1a782e0ca/transformed/lifecycle-livedata-core-2.7.0/res
+com.example.crop_disease_detection.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-1 /Users/shweta/.gradle/caches/8.9/transforms/1721aa19fc8121c365eb27950a8fb6a4/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/res
+com.example.crop_disease_detection.app-jetified-play-services-base-18.1.0-2 /Users/shweta/.gradle/caches/8.9/transforms/1c5a62b5e8c9ce58b434646c114b1200/transformed/jetified-play-services-base-18.1.0/res
+com.example.crop_disease_detection.app-jetified-annotation-experimental-1.4.0-3 /Users/shweta/.gradle/caches/8.9/transforms/1dcf1526b233e58ff11325bba94b69f9/transformed/jetified-annotation-experimental-1.4.0/res
+com.example.crop_disease_detection.app-jetified-firebase-common-20.4.3-4 /Users/shweta/.gradle/caches/8.9/transforms/22e82767e758568e0c9689a60faeb395/transformed/jetified-firebase-common-20.4.3/res
+com.example.crop_disease_detection.app-jetified-activity-1.9.1-5 /Users/shweta/.gradle/caches/8.9/transforms/2c6ef2d31cf09172b7155129e7257b4b/transformed/jetified-activity-1.9.1/res
+com.example.crop_disease_detection.app-jetified-tracing-1.2.0-6 /Users/shweta/.gradle/caches/8.9/transforms/35400e9133a8194ca280f06aead20f3e/transformed/jetified-tracing-1.2.0/res
+com.example.crop_disease_detection.app-jetified-lifecycle-livedata-core-ktx-2.7.0-7 /Users/shweta/.gradle/caches/8.9/transforms/3590554b31fadfb3bb9e46c04d6737c2/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/res
+com.example.crop_disease_detection.app-jetified-window-1.2.0-8 /Users/shweta/.gradle/caches/8.9/transforms/3a64f9f6a3cc47066d487dc2909f13f2/transformed/jetified-window-1.2.0/res
+com.example.crop_disease_detection.app-fragment-1.7.1-9 /Users/shweta/.gradle/caches/8.9/transforms/48542615c34c699451dd989cc7b9e5b6/transformed/fragment-1.7.1/res
+com.example.crop_disease_detection.app-jetified-savedstate-1.2.1-10 /Users/shweta/.gradle/caches/8.9/transforms/52d643b883fdc840f8a02f43c8699475/transformed/jetified-savedstate-1.2.1/res
+com.example.crop_disease_detection.app-jetified-core-ktx-1.13.1-11 /Users/shweta/.gradle/caches/8.9/transforms/574b3edf5b8faa6f0137f973bbcc0fae/transformed/jetified-core-ktx-1.13.1/res
+com.example.crop_disease_detection.app-core-1.13.1-12 /Users/shweta/.gradle/caches/8.9/transforms/6d92e61c36915eee4c98b815e11a179b/transformed/core-1.13.1/res
+com.example.crop_disease_detection.app-jetified-play-services-basement-18.3.0-13 /Users/shweta/.gradle/caches/8.9/transforms/8862ba3f655aa66fbb640f65a80aed6d/transformed/jetified-play-services-basement-18.3.0/res
+com.example.crop_disease_detection.app-jetified-profileinstaller-1.3.1-14 /Users/shweta/.gradle/caches/8.9/transforms/a48c78ba4e75684354d1b1b942fff6a5/transformed/jetified-profileinstaller-1.3.1/res
+com.example.crop_disease_detection.app-lifecycle-viewmodel-2.7.0-15 /Users/shweta/.gradle/caches/8.9/transforms/b527c184e401d2a239416dd328cef7b4/transformed/lifecycle-viewmodel-2.7.0/res
+com.example.crop_disease_detection.app-jetified-core-1.0.0-16 /Users/shweta/.gradle/caches/8.9/transforms/bc98fd2c40d736108d59d0dfb0ee220d/transformed/jetified-core-1.0.0/res
+com.example.crop_disease_detection.app-jetified-lifecycle-process-2.7.0-17 /Users/shweta/.gradle/caches/8.9/transforms/cb11dec936408a2be06e7c1accaab8c2/transformed/jetified-lifecycle-process-2.7.0/res
+com.example.crop_disease_detection.app-browser-1.4.0-18 /Users/shweta/.gradle/caches/8.9/transforms/e6223c4326946c272eba2929a4d3cbf3/transformed/browser-1.4.0/res
+com.example.crop_disease_detection.app-jetified-window-java-1.2.0-19 /Users/shweta/.gradle/caches/8.9/transforms/e649b73a0b4345f3b75f6bf2d5068abd/transformed/jetified-window-java-1.2.0/res
+com.example.crop_disease_detection.app-lifecycle-livedata-2.7.0-20 /Users/shweta/.gradle/caches/8.9/transforms/efa8a70806e6017c265fc6c6f5e97175/transformed/lifecycle-livedata-2.7.0/res
+com.example.crop_disease_detection.app-jetified-startup-runtime-1.1.1-21 /Users/shweta/.gradle/caches/8.9/transforms/f106b007d4c28b0cce81f877f4c08c22/transformed/jetified-startup-runtime-1.1.1/res
+com.example.crop_disease_detection.app-core-runtime-2.2.0-22 /Users/shweta/.gradle/caches/8.9/transforms/f69ad5498912c747b5d875a6406ebf75/transformed/core-runtime-2.2.0/res
+com.example.crop_disease_detection.app-lifecycle-runtime-2.7.0-23 /Users/shweta/.gradle/caches/8.9/transforms/fab0a8880d4245293a7ff26f6463b174/transformed/lifecycle-runtime-2.7.0/res
+com.example.crop_disease_detection.app-packaged_res-24 /Users/shweta/.pub-cache/hosted/pub.dev/camera_android-0.10.9+11/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-25 /Users/shweta/.pub-cache/hosted/pub.dev/cloud_firestore-4.17.5/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-26 /Users/shweta/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-27 /Users/shweta/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-28 /Users/shweta/.pub-cache/hosted/pub.dev/firebase_storage-11.7.7/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-29 /Users/shweta/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.22/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-packaged_res-30 /Users/shweta/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+13/android/build/intermediates/packaged_res/release
+com.example.crop_disease_detection.app-google-services-31 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/generated/res/google-services/release
+com.example.crop_disease_detection.app-pngs-32 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/generated/res/pngs/release
+com.example.crop_disease_detection.app-resValues-33 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/generated/res/resValues/release
+com.example.crop_disease_detection.app-rs-34 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/generated/res/rs/release
+com.example.crop_disease_detection.app-mergeReleaseResources-35 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.crop_disease_detection.app-mergeReleaseResources-36 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.crop_disease_detection.app-merged_res-37 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/build/intermediates/merged_res/release
+com.example.crop_disease_detection.app-main-38 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/main/res
+com.example.crop_disease_detection.app-release-39 /Users/shweta/Crop Disease Recognition/crop_disease_detection/android/app/src/release/res

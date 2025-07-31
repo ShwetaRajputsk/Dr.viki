@@ -1,0 +1,61 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "dr-viki-app",
+          "appId": "1:472330705050:android:61314c7e9400e52155e723",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "dr-viki-app",
+          "appId": "1:472330705050:ios:9bf89e0c32f78f7455e723",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "dr-viki-app",
+          "appId": "1:472330705050:ios:9bf89e0c32f78f7455e723",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options_dr_viki.dart": {
+          "projectId": "dr-viki-app",
+          "configurations": {
+            "android": "1:472330705050:android:61314c7e9400e52155e723",
+            "ios": "1:472330705050:ios:9bf89e0c32f78f7455e723",
+            "macos": "1:472330705050:ios:9bf89e0c32f78f7455e723",
+            "web": "1:472330705050:web:a6ca636e8306c0c755e723",
+            "windows": "1:472330705050:web:61314c7e9400e52155e723"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
+}
