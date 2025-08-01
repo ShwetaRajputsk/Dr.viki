@@ -63,7 +63,10 @@ class _ChatPageState extends State<ChatPage> {
 
   Future<void> _loadChatHistory() async {
     final user = FirebaseAuth.instance.currentUser;
-    if (user == null) return;
+    if (user == null) {
+      debugPrint("No user logged in, skipping chat history load");
+      return;
+    }
 
     try {
       final querySnapshot = await FirebaseFirestore.instance
@@ -97,6 +100,10 @@ class _ChatPageState extends State<ChatPage> {
       }
     } catch (e) {
       debugPrint("Error loading chat history: $e");
+      // Don't show error to user if it's a permissions issue
+      if (e.toString().contains('permission-denied')) {
+        debugPrint("Firestore permissions not set up yet - this is normal for new users");
+      }
     }
   }
 

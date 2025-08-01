@@ -174,6 +174,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: SafeArea(
         child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 80), // Add padding for FAB
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
