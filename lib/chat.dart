@@ -25,13 +25,22 @@ class _ChatPageState extends State<ChatPage> {
   final String _apiKey = const String.fromEnvironment('GROQ_API_KEY', defaultValue: '');
   final String _apiUrl = "https://api.groq.com/openai/v1/chat/completions";
   int _currentIndex = 1;
-  final Color primaryColor = const Color(0xFF1C4B0C);
+
+  // Dr. Viki Brand Colors
+  final Color primaryColor = const Color(0xFF27C2A4); // Futuristic Teal Glow
+  final Color secondaryColor = const Color(0xFFA7C7A1); // Healing Sage Green
+  final Color accentColor = const Color(0xFFE76F51); // Terracotta Orange
+  final Color textColor = const Color(0xFF2F2F2F); // Charcoal Grey
+  final Color lightTextColor = const Color(0xFFAFAFAF); // Soft Ash
+  final Color backgroundColor = const Color(0xFFF8F4EC); // Warm Sand Beige
 
   List<String> _prefilledQuestions = [
-    'bestCropsSummer'.tr(),
-    'protectCropsDiseases'.tr(),
-    'idealIrrigationSystem'.tr(),
-    'sustainableFarmingPractices'.tr(),
+    'What are the best Ayurvedic practices for my Vata dosha?',
+    'How can I balance my Pitta dosha naturally?',
+    'What foods should I avoid for Kapha imbalance?',
+    'Can you suggest a daily wellness routine?',
+    'What are the symptoms of dosha imbalance?',
+    'How to improve my digestive health with Ayurveda?',
   ];
 
   void _onItemTapped(int index) {
@@ -115,7 +124,7 @@ class _ChatPageState extends State<ChatPage> {
         setState(() {
           _messages.add({
             'role': 'assistant',
-            'content': 'clearHistoryError'.tr(),
+            'content': 'Unable to clear chat history. Please try again.',
             'timestamp': DateTime.now(),
           });
         });
@@ -143,7 +152,7 @@ class _ChatPageState extends State<ChatPage> {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        _showErrorMessage("Please log in to use chat");
+        _showErrorMessage("Please log in to use Dr. Viki's AI assistant");
         return;
       }
       
@@ -168,7 +177,7 @@ class _ChatPageState extends State<ChatPage> {
           "messages": [
             {
               "role": "system",
-              "content": "You are an agricultural assistant. Provide detailed, professional answers.",
+              "content": "You are Dr. Viki, an expert Ayurvedic wellness assistant. You provide personalized advice based on dosha principles (Vata, Pitta, Kapha). Focus on natural remedies, lifestyle recommendations, and holistic wellness. Always be supportive, knowledgeable, and encourage healthy practices. Respond in a warm, professional manner.",
             },
             ..._messages.map((msg) => {"role": msg["role"], "content": msg["content"]})
           ],
@@ -199,13 +208,13 @@ class _ChatPageState extends State<ChatPage> {
         throw HttpException("API Error", response.statusCode);
       }
     } on TimeoutException {
-      _showErrorMessage("timeoutError".tr());
+      _showErrorMessage("Connection timeout. Please try again.");
     } on SocketException {
-      _showErrorMessage("connectionFailed".tr());
+      _showErrorMessage("No internet connection. Please check your network.");
     } on HttpException catch (e) {
-      _showErrorMessage("apiError".tr(args: [e.statusCode.toString()]));
+      _showErrorMessage("Service temporarily unavailable. Please try again later.");
     } catch (e) {
-      _showErrorMessage("errorProcessingRequest".tr());
+      _showErrorMessage("Unable to process your request. Please try again.");
       debugPrint("Error: $e");
     } finally {
       if (mounted) setState(() => _isLoading = false);
@@ -238,45 +247,80 @@ class _ChatPageState extends State<ChatPage> {
   void _copyToClipboard(String text) {
     Clipboard.setData(ClipboardData(text: text));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('copiedToClipboard'.tr())),
+      SnackBar(
+        content: Text('Response copied to clipboard'),
+        backgroundColor: primaryColor,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: primaryColor,
         elevation: 0,
-        title: const Text(
-          'AI Assistant',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-            letterSpacing: 0.5,
-          ),
+        title: Row(
+          children: [
+            Text(
+              'Dr. ',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'ViKi',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(width: 8),
+            Text(
+              'AI Assistant',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                color: Colors.white.withOpacity(0.9),
+              ),
+            ),
+          ],
         ),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
           IconButton(
-            icon: const Icon(Icons.help_outline, color: Colors.white),
-            onPressed: () {},
+            icon: Icon(Icons.help_outline, color: Colors.white),
+            onPressed: () {
+              // Show help or tips
+            },
           ),
         ],
       ),
       body: Column(
         children: [
-          // Assistant Card
+          // Dr. Viki Assistant Card
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
-              padding: EdgeInsets.all(18),
-              height: 100,
+              padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color(0xFF1C4B0C),
+                gradient: LinearGradient(
+                  colors: [primaryColor, secondaryColor],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
                 borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: primaryColor.withOpacity(0.3),
+                    blurRadius: 10,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
               child: Row(
                 children: [
@@ -285,39 +329,45 @@ class _ChatPageState extends State<ChatPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'I\'m your Dr. ViKi Assistant',
+                          'Namaste! I\'m Dr. Viki',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 12,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: 8),
                         Text(
-                          'Here to help you with all your agricultural needs. '
-                          'Ask me about crop care, disease solutions, or farming best practices.',
+                          'Your personal Ayurvedic wellness assistant. Ask me about dosha balance, natural remedies, lifestyle tips, and holistic wellness practices.',
                           style: TextStyle(
                             color: Colors.white.withOpacity(0.9),
-                            fontSize: 9,
+                            fontSize: 14,
+                            height: 1.4,
                           ),
                         ),
                       ],
                     ),
                   ),
-                Align(
-          alignment: Alignment.bottomRight,
-          child: Image.asset(
-            'assets/images/assistant_icon.png',
-            height: 180,
-            fit: BoxFit.contain,
-          ),
-        ),
+                  SizedBox(width: 16),
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.medical_services,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
 
-          // Existing content below
+          // Suggested Questions
           if (_messages.isEmpty)
             Container(
               padding: const EdgeInsets.all(16),
@@ -325,37 +375,41 @@ class _ChatPageState extends State<ChatPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'suggestedQuestions'.tr(),
+                    'Ask Dr. Viki about:',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: primaryColor,
+                      color: textColor,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 16),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
                     children: _prefilledQuestions.map((question) => InkWell(
                       onTap: () => _sendMessage(question),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: primaryColor.withOpacity(0.2)),
+                          border: Border.all(color: primaryColor.withOpacity(0.3)),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.1),
                               spreadRadius: 1,
                               blurRadius: 4,
-                              offset: const Offset(0, 1),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
                         child: Text(
                           question,
-                          style: TextStyle(color: primaryColor, fontSize: 14),
+                          style: TextStyle(
+                            color: primaryColor, 
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     )).toList(),
@@ -363,6 +417,8 @@ class _ChatPageState extends State<ChatPage> {
                 ],
               ),
             ),
+
+          // Chat Messages
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
@@ -390,18 +446,43 @@ class _ChatPageState extends State<ChatPage> {
                             color: Colors.grey.withOpacity(0.1),
                             spreadRadius: 1,
                             blurRadius: 4,
-                            offset: const Offset(0, 1)),
+                            offset: const Offset(0, 2)),
                         ],
                       ),
-                      child: MarkdownBody(
-                        data: message['content'],
-                        styleSheet: MarkdownStyleSheet(
-                          p: TextStyle(
-                            color: message['role'] == 'user' 
-                                ? Colors.white 
-                                : Colors.black87,
-                            fontSize: 15),
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          MarkdownBody(
+                            data: message['content'],
+                            styleSheet: MarkdownStyleSheet(
+                              p: TextStyle(
+                                color: message['role'] == 'user' 
+                                    ? Colors.white 
+                                    : textColor,
+                                fontSize: 15,
+                                height: 1.4,
+                              ),
+                              strong: TextStyle(
+                                color: message['role'] == 'user' 
+                                    ? Colors.white 
+                                    : primaryColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          if (message['role'] == 'assistant') ...[
+                            SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  icon: Icon(Icons.copy, size: 16, color: lightTextColor),
+                                  onPressed: () => _copyToClipboard(message['content']),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ],
                       ),
                     ),
                   ),
@@ -409,14 +490,53 @@ class _ChatPageState extends State<ChatPage> {
               },
             ),
           ),
+
+          // Loading Indicator
           if (_isLoading)
             Padding(
               padding: const EdgeInsets.all(16),
-              child: Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(primaryColor)),
+              child: Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 4,
+                          offset: const Offset(0, 2)),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor: AlwaysStoppedAnimation<Color>(primaryColor),
+                          ),
+                        ),
+                        SizedBox(width: 12),
+                        Text(
+                          'Dr. Viki is thinking...',
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
+
+          // Input Section
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -434,30 +554,46 @@ class _ChatPageState extends State<ChatPage> {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey[50],
+                      color: backgroundColor,
                       borderRadius: BorderRadius.circular(24),
-                      border: Border.all(color: Colors.grey.shade200)),
+                      border: Border.all(color: primaryColor.withOpacity(0.3)),
+                    ),
                     child: TextField(
                       controller: _controller,
                       decoration: InputDecoration(
-                        hintText: 'typeMessage'.tr(),
-                        hintStyle: TextStyle(color: Colors.grey[400]),
+                        hintText: 'Ask Dr. Viki about your wellness...',
+                        hintStyle: TextStyle(color: lightTextColor),
                         border: InputBorder.none,
                         contentPadding: const EdgeInsets.symmetric(
                           horizontal: 16,
                           vertical: 12),
+                        prefixIcon: Icon(
+                          Icons.medical_services_outlined,
+                          color: primaryColor,
+                          size: 20,
+                        ),
                       ),
                       onSubmitted: (value) => _sendMessage(value),
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: 12),
                 Container(
                   decoration: BoxDecoration(
-                    color: primaryColor,
-                    shape: BoxShape.circle),
+                    gradient: LinearGradient(
+                      colors: [primaryColor, secondaryColor],
+                    ),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: primaryColor.withOpacity(0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
                   child: IconButton(
-                    icon: const Icon(Icons.send_rounded, color: Colors.white),
+                    icon: Icon(Icons.send_rounded, color: Colors.white, size: 20),
                     onPressed: () => _sendMessage(_controller.text),
                   ),
                 ),

@@ -153,6 +153,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F4EC), // Warm Sand Beige
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ChatPage()),
+          );
+        },
+        backgroundColor: const Color(0xFF27C2A4), // Futuristic Teal Glow
+        child: Icon(
+          Icons.chat_bubble_outline,
+          color: Colors.white,
+          size: 24,
+        ),
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
